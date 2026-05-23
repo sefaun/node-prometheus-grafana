@@ -1,15 +1,34 @@
+#docker swarm için
 global:
   scrape_interval: 5s
-  evaluation_interval: 5s
 
 scrape_configs:
-  - job_name: "node-app"
-    metrics_path: /metrics
-    static_configs:
-      - targets: ["app:3000"]
-        labels:
-          service: "node-app"
+
+  - job_name: "node-prometheus-grafana-app"
+
+    dns_sd_configs:
+      - names:
+          - "tasks.app"
+        type: A
+        port: 3000
 
   - job_name: "prometheus"
     static_configs:
       - targets: ["localhost:9090"]
+
+#docker-compose.yml için
+#global:
+#  scrape_interval: 5s
+#  evaluation_interval: 5s
+
+#scrape_configs:
+#  - job_name: "node-app"
+#    metrics_path: /metrics
+#    static_configs:
+#      - targets: ["app:3000"]
+#        labels:
+#          service: "node-app"
+
+#  - job_name: "prometheus"
+#    static_configs:
+#      - targets: ["localhost:9090"]
