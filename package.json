@@ -1,0 +1,27 @@
+{
+  "name": "node-prometheus-grafana",
+  "version": "1.0.0",
+  "description": "Express API izleme örneği: Prometheus + Grafana ile kullanıcı bazlı istek metrikleri",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "load-test": "node scripts/loadTest.js"
+  },
+  "keywords": [
+    "express",
+    "prometheus",
+    "grafana",
+    "metrics",
+    "monitoring"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "prom-client": "^15.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
