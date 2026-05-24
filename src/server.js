@@ -53,6 +53,7 @@ setInterval(() => {
 app.use((req, res, next) => {
   const start = process.hrtime.bigint();
   if (req.path !== '/metrics') console.log('istek geldi');
+  else console.log('metrics isteği geldi');
   // Kullanıcıyı header, query veya body üzerinden al; yoksa 'anonymous'
   const userId =
     req.header('x-user-id') ||

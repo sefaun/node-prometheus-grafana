@@ -4,7 +4,7 @@ global:
 
 scrape_configs:
 
-  - job_name: "node-prometheus-grafana-app"
+  - job_name: "api-app"
 
     dns_sd_configs:
       - names:
@@ -22,12 +22,12 @@ scrape_configs:
 #  evaluation_interval: 5s
 
 #scrape_configs:
-#  - job_name: "node-app"
+#  - job_name: "api-app"
 #    metrics_path: /metrics
 #    static_configs:
 #      - targets: ["app:3000"]
 #        labels:
-#          service: "node-app"
+#          service: "api-app"
 
 #  - job_name: "prometheus"
 #    static_configs:
