@@ -2,13 +2,16 @@ version: "3.9"
 
 services:
   app:
-    image: api-app:latest
+    image: ghcr.io/sefaun/node-prometheus-grafana:latest
     ports:
       - "3000:3000"
     deploy:
       replicas: 3
       restart_policy:
         condition: any
+      placement:
+        constraints:
+          - node.role == worker
     networks:
       - monitoring
 
